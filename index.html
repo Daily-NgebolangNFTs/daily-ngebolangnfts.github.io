@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="hark.css" />
     <link rel="stylesheet" href="hark-hero.css" />
-    <link rel="stylesheet" href="app.css?v=a1">
+    <link rel="stylesheet" href="app.css?v=ww1">
   </head>
   <body>
     <div class="x-bgfx" aria-hidden="true"></div>
@@ -63,7 +63,25 @@
             <button type="button" class="x-authtab" id="vGarBtn" role="tab" aria-selected="true" aria-controls="vGar">📋 Garapan</button>
             <button type="button" class="x-authtab" id="vTopBtn" role="tab" aria-selected="false" aria-controls="vTop">🏆 Top Gainer</button>
             <button type="button" class="x-authtab" id="vAddrBtn" role="tab" aria-selected="false" aria-controls="vAddr">👛 Address</button>
+            <button type="button" class="x-authtab" id="vWhaleBtn" role="tab" aria-selected="false" aria-controls="vWhale">🐋 Whale Watch</button>
           </div>
+
+          <section class="x-glass x-card x-view" id="vWhale" role="tabpanel" aria-labelledby="ww-title" hidden>
+            <div class="x-tasks-head">
+              <h2 id="ww-title">🐋 Whale Watch</h2>
+              <button type="button" class="x-add" id="wwFollow">+ Follow</button>
+            </div>
+            <p class="x-sub">Buy token dari wallet yang kamu follow. Cuma jalan pas tab ini kebuka.</p>
+            <div class="x-wwbar">
+              <span class="x-wwlive" id="wwLive">Live</span>
+              <span class="x-wwinfo" id="wwInfo"></span>
+              <span class="x-spacer"></span>
+              <button type="button" class="x-sbtn" id="wwToggle" aria-pressed="false">⏸ Pause</button>
+            </div>
+            <div class="x-scroll" id="wwChips" role="group" aria-label="Filter wallet"></div>
+            <div id="wwBody"></div>
+            <p class="x-adnote">Data: Blockscout · Solana RPC · DexScreener</p>
+          </section>
 
           <section class="x-glass x-card x-view" id="vAddr" role="tabpanel" aria-labelledby="ad-title" hidden>
             <div class="x-tasks-head">
@@ -197,6 +215,34 @@
       </div>
     </div>
 
+    <!-- Whale Watch follow sheet -->
+    <div class="x-overlay" id="wwOv" aria-hidden="true">
+      <div class="x-sheet" role="dialog" aria-modal="true" aria-labelledby="wwTitle">
+        <div class="x-grab" aria-hidden="true"></div>
+        <h2 id="wwTitle">🐋 Follow wallet</h2>
+        <div class="x-field">
+          <label for="wwAddr">Address <span class="x-req">*</span></label>
+          <input class="x-input x-mono" id="wwAddr" type="text" placeholder="Address Solana atau 0x…" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="64" aria-describedby="wwHint" />
+          <p class="x-fhint" id="wwHint">Solana atau EVM (0x…), chain-nya kebaca otomatis</p>
+        </div>
+        <div class="x-field">
+          <label for="wwLabel">Label <span class="x-opt">(opsional)</span></label>
+          <input class="x-input" id="wwLabel" type="text" maxlength="24" placeholder="mis. Whale SOL #1" autocomplete="off" />
+        </div>
+        <div class="x-field">
+          <span class="x-flabel" id="wwChLabel">Chain <span class="x-req">*</span></span>
+          <div class="x-chains" id="wwChains" role="group" aria-labelledby="wwChLabel"></div>
+        </div>
+        <p class="x-err" id="wwErr" role="alert"></p>
+        <div class="x-sheetbtns">
+          <button type="button" class="x-ghost" data-close>Batal</button>
+          <button type="button" class="x-primary" id="wwSave">Follow</button>
+        </div>
+        <p class="x-label" id="wwListLabel">Wallet yang di-follow</p>
+        <div class="x-adrows" id="wwList"></div>
+      </div>
+    </div>
+
     <!-- calendar sheet -->
     <div class="x-overlay" id="calOv" aria-hidden="true">
       <div class="x-sheet" role="dialog" aria-modal="true" aria-labelledby="calTitle">
@@ -305,6 +351,6 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
-    <script src="app.js?v=a1"></script>
+    <script src="app.js?v=ww1"></script>
   </body>
 </html>
