@@ -437,3 +437,114 @@
         .x-adside { grid-column: 2; display: flex; flex-wrap: wrap; gap: 6px; }
       }
       .x-linkbtn { min-height: var(--tap); padding: 0 6px; border: 0; background: transparent; color: #b89bff; font: 600 14px/1 var(--sans); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+      /* ---------- phone layout (320–640px) ---------- */
+      @media (max-width: 640px) {
+        html, body { overflow-x: clip; max-width: 100%; }
+        body { font-size: 14.5px; }
+        .page { padding-inline: 0; padding-block: 0; }
+        .x-app { padding: max(12px, env(safe-area-inset-top)) 12px calc(24px + env(safe-area-inset-bottom)); gap: 12px; }
+        .x-side, .x-mainc { gap: 12px; }
+
+        /* headings scale smoothly 320 → 430 */
+        .x-head { gap: 10px; padding: 2px 0; }
+        .x-logo { width: 40px; height: 40px; border-radius: 12px; font-size: 18px; }
+        .x-head h1 { font-size: clamp(18px, 4.2vw + 5px, 23px); }
+        .x-card h2 { font-size: clamp(17px, 2.6vw + 9px, 20px); }
+
+        /* section cards: one gutter only */
+        .x-card { padding: 14px; border-radius: 20px; }
+        .x-scroll { margin: 10px -14px 0; padding: 2px 14px; gap: 6px; }
+        .x-tab { min-height: var(--tap); padding: 0 12px; font-size: 13px; }
+        .x-tab--chain { padding: 0 10px 0 5px; }
+        .x-tab .x-clogo { width: 20px; height: 20px; }
+
+        /* Garapan: flat wrapper so cards sit ~12px from the screen edge */
+        #vGar { background: none; border: 0; border-radius: 0; padding: 2px 0 0; backdrop-filter: none; -webkit-backdrop-filter: none; overflow: visible; }
+        #vGar .x-scroll { margin-inline: -12px; padding-inline: 12px; }
+        .x-tasks-head { gap: 8px 10px; }
+        .x-add { min-height: 40px; padding: 0 14px; font-size: 14px; }
+        .x-search { margin-top: 10px; }
+        .x-list { gap: 10px; margin-top: 12px; }
+
+        /* check-in */
+        .x-checkbtn { margin-top: 12px; min-height: 54px; font-size: 16px; }
+        .x-streaks { gap: 6px; margin-top: 12px; }
+        .x-streak { padding: 10px 6px; }
+        .x-streak b { font-size: clamp(18px, 3vw + 9px, 22px); }
+        .x-label { margin: 16px 0 8px; }
+        .x-week { gap: 4px; }
+        .x-day i { width: 28px; height: 28px; font-size: 12px; }
+        .x-heat { gap: 4px; }
+
+        /* stats tiles */
+        .x-stats { gap: 6px; }
+        .x-stat { padding: 10px 12px; }
+        .x-stat b { font-size: clamp(18px, 2.4vw + 10px, 21px); }
+        .x-stat--wide b { font-size: 14px; }
+
+        /* view tabs scroll sideways when they don't fit */
+        .x-vtabs { display: flex; overflow-x: auto; scrollbar-width: none; gap: 4px; padding: 3px; }
+        .x-vtabs::-webkit-scrollbar { display: none; }
+        .x-vtabs .x-authtab { flex: 1 0 auto; min-height: var(--tap); padding: 0 12px; font-size: 13px; white-space: nowrap; }
+
+        /* garapan card */
+        .x-task { padding: 14px; border-radius: 18px; }
+        .x-task__top { gap: 10px; align-items: flex-start; }
+        .x-task .x-clogo { width: 40px; height: 40px; }
+        .x-task__chain { display: block; font-size: 12px; line-height: 1.3; }
+        .x-task h3 { font: 600 17px/1.3 var(--sans); word-break: normal; overflow-wrap: anywhere;
+          display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; text-overflow: ellipsis; }
+        .x-badge { padding: 4px 10px; font-size: 12px; line-height: 1.2; align-self: flex-start; white-space: nowrap; }
+        .x-badge + .x-badge { margin-left: -4px; }
+        .x-due { display: flex; flex-wrap: wrap; width: fit-content; max-width: 100%; gap: 0 4px; margin-top: 10px; padding: 5px 10px; font-size: 13.5px; line-height: 1.35; }
+        .x-due small { font-size: 13px; }
+        .x-notes { margin-top: 8px; font-size: 14px; }
+        .x-ids { margin-top: 8px; }
+
+        /* OpenSea panel */
+        .os-panel { margin-top: 10px; padding: 12px; gap: 8px; border-radius: 14px; }
+        .x-oscd { font-size: 22px; }
+        .x-ostiles { gap: 6px; }
+        .x-ostile { padding: 8px 10px; }
+        .x-ostile b { font-size: 15px; }
+        .x-osfoot { flex-wrap: nowrap; align-items: center; font-size: 12px; line-height: 1.2; white-space: nowrap; }
+        .x-osfoot > span { display: inline-flex; align-items: center; gap: 4px; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+        .x-osfoot > span:last-child { flex: none; }
+        .os-panel .x-osrefresh { min-height: 28px; min-width: 28px; height: 28px; padding: 0 8px; font-size: 13px; }
+
+        /* action row */
+        .x-actions { gap: 6px; margin-top: 12px; }
+        .x-actions .x-spacer { display: none; }
+        .x-actions .x-sbtn { min-height: 34px; height: 34px; min-width: 34px; padding: 0 12px; font-size: 13px; gap: 5px; white-space: nowrap; }
+        .x-actions .x-status { padding-left: 10px; }
+        .x-actions .x-status::before { width: 7px; height: 7px; }
+        .x-actions [data-act="edit"], .x-actions [data-act="del"] { width: 34px; padding: 0; }
+        .x-actions [data-act="edit"] { margin-left: auto; }
+
+        /* Top Gainer + address */
+        .x-gt { margin-top: 10px; }
+        .x-gt th { padding: 0 4px 6px; }
+        .x-gt td { padding: 3px 4px; }
+        .x-gt .x-gt-rk { width: 28px; font-size: 12px; }
+        .x-gt .x-gt-ch { width: 36px; }
+        .x-gt-nm a { font-size: 13.5px; }
+        .x-gt-fl b { font-size: 12.5px; }
+        .x-adbig { padding: 12px; }
+        .x-adnft { padding: 10px; gap: 10px; }
+
+        /* footer + sheet */
+        .x-foot { padding: 12px 14px; }
+        .x-sheet { padding: 10px 16px calc(16px + env(safe-area-inset-bottom)); }
+        .x-sheetfoot { margin: 0 -16px calc(-16px - env(safe-area-inset-bottom)); padding: 12px 16px calc(16px + env(safe-area-inset-bottom)); bottom: calc(-16px - env(safe-area-inset-bottom)); }
+      }
+      @media (max-width: 359px) {
+        .x-app { padding-inline: 10px; }
+        .x-card, .x-task { padding: 12px; }
+        .x-scroll { margin-inline: -12px; padding-inline: 12px; }
+        #vGar .x-scroll { margin-inline: -10px; padding-inline: 10px; }
+        .x-task .x-clogo { width: 36px; height: 36px; }
+        .x-task h3 { font-size: 16px; }
+        .x-actions .x-sbtn { padding: 0 10px; }
+        .x-oscd { font-size: 20px; }
+      }
