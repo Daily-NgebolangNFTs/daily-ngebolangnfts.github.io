@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="hark.css" />
     <link rel="stylesheet" href="hark-hero.css" />
-    <link rel="stylesheet" href="app.css?v=ww2">
+    <link rel="stylesheet" href="app.css?v=bn1">
   </head>
   <body>
     <div class="x-bgfx" aria-hidden="true"></div>
@@ -115,7 +115,10 @@
           <section class="x-glass x-card x-view" id="vGar" role="tabpanel" aria-labelledby="t-title">
             <div class="x-tasks-head">
               <h2 id="t-title">Daftar Garapan</h2>
-              <button class="x-add" id="addBtn" type="button">+ Tambah Garapan</button>
+              <div class="x-addrow">
+                <button class="x-add" id="addBtn" type="button">+ Tambah Garapan</button>
+                <button class="x-add x-add--os" id="mintBtn" type="button">🌊 Mint OpenSea</button>
+              </div>
             </div>
             <div class="x-search">
               <input class="x-input" id="q" type="search" aria-label="Cari garapan" placeholder="Cari nama project, catatan…" autocomplete="off" />
@@ -185,6 +188,21 @@
         <div class="x-field">
           <label for="fNotes">Catatan <span class="x-opt">(opsional)</span></label>
           <textarea class="x-input" id="fNotes" maxlength="500" placeholder="Task harian, wallet yang dipake, dll."></textarea>
+        </div>
+        <div class="x-field">
+          <span class="x-flabel" id="fBnLabel">Banner <span class="x-opt">(opsional)</span></span>
+          <div class="x-bn" id="fBn">
+            <div class="x-pills" role="group" aria-labelledby="fBnLabel">
+              <button type="button" class="x-tab" data-bnmode="url" aria-pressed="false">Tempel link gambar</button>
+              <label class="x-tab x-bnup">📷 Upload dari galeri<input type="file" accept="image/*" data-bnfile /></label>
+            </div>
+            <input class="x-input" data-bnurl type="url" inputmode="url" placeholder="https://…/gambar.jpg" aria-label="Link gambar banner" autocomplete="off" autocapitalize="off" spellcheck="false" hidden />
+            <div class="x-bnprev" hidden>
+              <img alt="Preview banner" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+              <button type="button" class="x-sbtn x-sbtn--del" data-bnclear>Hapus banner</button>
+            </div>
+            <p class="x-bnmsg" data-bnmsg aria-live="polite"></p>
+          </div>
         </div>
         <div class="x-sheetfoot">
           <p class="x-err" id="fErr" role="alert" aria-live="assertive"></p>
@@ -331,6 +349,51 @@
 
     <div class="x-toast" id="toast" role="status" aria-live="polite"></div>
 
+    <!-- Mint OpenSea sheet -->
+    <div class="x-overlay" id="mintOv" aria-hidden="true">
+      <div class="x-sheet" id="mintForm" role="dialog" aria-modal="true" aria-labelledby="mintTitle">
+        <div class="x-grab" aria-hidden="true"></div>
+        <h2 id="mintTitle">🌊 Mint OpenSea</h2>
+        <div class="x-field">
+          <label for="mOS">Link OpenSea <span class="x-req">*</span></label>
+          <input class="x-input" id="mOS" type="url" inputmode="url" placeholder="https://opensea.io/collection/nama-collection" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="mOSMsg" />
+          <p class="x-bnmsg" id="mOSMsg" aria-live="polite"></p>
+        </div>
+        <div class="x-field">
+          <label for="mName">Nama</label>
+          <input class="x-input" id="mName" maxlength="80" placeholder="Otomatis dari OpenSea" autocomplete="off" />
+        </div>
+        <div class="x-field">
+          <label for="mChain">Chain</label>
+          <select class="x-input" id="mChain"></select>
+          <input class="x-input" id="mCustom" maxlength="30" placeholder="Nama chain lainnya" aria-label="Nama chain lainnya" style="margin-top:8px" hidden autocomplete="off" />
+        </div>
+        <div class="x-field">
+          <span class="x-flabel" id="mBnLabel">Banner <span class="x-opt">(opsional, default banner OpenSea)</span></span>
+          <div class="x-bn" id="mBn">
+            <div class="x-pills" role="group" aria-labelledby="mBnLabel">
+              <button type="button" class="x-tab" data-bnmode="url" aria-pressed="false">Tempel link gambar</button>
+              <label class="x-tab x-bnup">📷 Upload dari galeri<input type="file" accept="image/*" data-bnfile /></label>
+            </div>
+            <input class="x-input" data-bnurl type="url" inputmode="url" placeholder="https://…/gambar.jpg" aria-label="Link gambar banner" autocomplete="off" autocapitalize="off" spellcheck="false" hidden />
+            <div class="x-bnprev" hidden>
+              <img alt="Preview banner" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+              <button type="button" class="x-sbtn x-sbtn--del" data-bnclear>Hapus banner</button>
+            </div>
+            <p class="x-bnmsg" data-bnmsg aria-live="polite"></p>
+          </div>
+        </div>
+        <p class="x-fhint">Kategori otomatis: Mint (OpenSea). Countdown, floor & top offer muncul di kartu.</p>
+        <div class="x-sheetfoot">
+          <p class="x-err" id="mErr" role="alert" aria-live="assertive"></p>
+          <div class="x-sheetbtns">
+            <button type="button" class="x-ghost" data-close>Batal</button>
+            <button type="button" class="x-primary" id="mSubmit">Simpan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- chain logo templates, cloned by the app -->
     <div id="logoTpl" hidden>
       <img class="x-clogo" data-chain="ink" src="chain-ink.webp" alt="" />
@@ -351,6 +414,6 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
-    <script src="app.js?v=ww2"></script>
+    <script src="app.js?v=bn1"></script>
   </body>
 </html>
