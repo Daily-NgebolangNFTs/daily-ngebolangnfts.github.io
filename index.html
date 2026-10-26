@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="hark.css" />
     <link rel="stylesheet" href="hark-hero.css" />
-    <link rel="stylesheet" href="app.css?v=bn1">
+    <link rel="stylesheet" href="app.css?v=el1">
   </head>
   <body>
     <div class="x-bgfx" aria-hidden="true"></div>
@@ -224,12 +224,28 @@
           <input class="x-input x-mono" id="osKeyIn" type="text" placeholder="Tempel API key kamu" autocomplete="off" autocapitalize="off" spellcheck="false" />
           <p class="x-fhint">Kosong = pakai key otomatis yang dibuat sendiri oleh app.</p>
         </div>
+        <div class="x-field">
+          <label for="eligProxyIn">Elig proxy URL <span class="x-opt">(opsional)</span></label>
+          <input class="x-input x-mono" id="eligProxyIn" type="url" inputmode="url" placeholder="https://proxy-kamu/…" autocomplete="off" autocapitalize="off" spellcheck="false" />
+          <p class="x-fhint">Buat cek sebelum mint pakai token</p>
+        </div>
         <p class="x-sub" id="osStatus" aria-live="polite" style="margin:0 0 16px"></p>
         <div class="x-sheetbtns">
           <button type="button" class="x-ghost" id="osKeyDel">Hapus</button>
           <button type="button" class="x-primary" id="osKeySave">Simpan</button>
         </div>
         <div class="x-sheetbtns"><button type="button" class="x-ghost" data-close>Tutup</button></div>
+      </div>
+    </div>
+
+    <!-- ✅ Elig check sheet -->
+    <div class="x-overlay" id="eligOv" aria-hidden="true">
+      <div class="x-sheet" role="dialog" aria-modal="true" aria-labelledby="eligTitle">
+        <div class="x-grab" aria-hidden="true"></div>
+        <h2 id="eligTitle">✅ Cek eligibility</h2>
+        <p class="x-sub" id="eligSub" style="margin:-10px 0 14px"></p>
+        <div id="eligBody" aria-live="polite"></div>
+        <div class="x-sheetbtns"><button type="button" class="x-ghost" id="eligX" data-close>Tutup</button></div>
       </div>
     </div>
 
@@ -414,6 +430,6 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
-    <script src="app.js?v=bn1"></script>
+    <script src="app.js?v=el1"></script>
   </body>
 </html>
