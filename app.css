@@ -419,6 +419,7 @@
       /* Upcoming Mint */
       .x-upbadge { display:inline-grid; place-items:center; min-width:18px; height:18px; padding:0 5px; margin-left:6px; border-radius:999px; background:#22c55e; color:#04130a; font:700 11px/1 var(--sans); }
       .x-uplist { display:grid; gap:10px; margin-top:12px; }
+      .x-upbadge[hidden] { display:none !important; }
       .x-upit { display:grid; grid-template-columns:56px 1fr; gap:12px; padding:12px; border-radius:var(--r-m); border:1px solid var(--x-stroke-2); background:rgb(255 255 255 / 0.03); min-width:0; }
       .x-upit.is-new { border-color:rgb(34 197 94 / 0.6); box-shadow:0 0 16px rgb(34 197 94 / 0.18); }
       .x-upimg { position:relative; width:56px; height:56px; }
