@@ -173,6 +173,35 @@
         box-shadow: 0 0 0 1px var(--x-stroke-2); }
       span.x-clogo { background: var(--x-grad); color: #fff; font: 600 13px/1 var(--sans); letter-spacing: 0.02em; }
 
+      /* card icon: project pfp with a small chain badge */
+      .x-ticon { position: relative; flex: none; display: inline-grid; }
+      .x-task .x-ticon .x-pfp { background: var(--x-card-2); }
+      .x-task .x-ticon .x-cbadge { position: absolute; right: -3px; bottom: -3px; width: 19px; height: 19px; font-size: 8px; letter-spacing: 0;
+        box-shadow: 0 0 0 2px #0b0b14; }
+      /* card banner (manual or OpenSea) */
+      .x-task.has-bn { background-image: linear-gradient(180deg, rgb(6 6 14 / .35) 0%, rgb(6 6 14 / .85) 100%), var(--x-bn);
+        background-size: cover; background-position: center; background-repeat: no-repeat; }
+      .x-task.has-bn h3, .x-task.has-bn .x-task__chain, .x-task.has-bn .x-notes { text-shadow: 0 1px 3px rgb(0 0 0 / .7); }
+      .x-task.has-bn .x-task__chain, .x-task.has-bn .x-notes { color: #c9c9d8; }
+
+      /* add buttons */
+      .x-addrow { display: flex; flex-wrap: wrap; gap: 8px; }
+      .x-add--os { background: linear-gradient(var(--x-bg), var(--x-bg)) padding-box, var(--x-grad) border-box; border: 1px solid transparent; box-shadow: none; }
+
+      /* banner field */
+      .x-bnup { position: relative; }
+      .x-bnup input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+      .x-bnup:focus-within { outline: 2px solid var(--x-purple); outline-offset: 2px; }
+      .x-bn .x-input { margin-top: 8px; }
+      .x-bnprev { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+      .x-bnprev img { width: 132px; height: 60px; object-fit: cover; border-radius: var(--r-s); border: 1px solid var(--x-stroke-2); background: var(--x-card-2); flex: none; }
+      .x-bnmsg { margin: 6px 0 0; color: var(--x-muted); font: var(--type-small); }
+      .x-bnmsg:empty { display: none; }
+      .x-bnmsg.is-bad { color: var(--x-bad); }
+      .x-bnmsg.is-ok { color: var(--x-ok); }
+      .x-bnprev[hidden], .x-bn .x-input[hidden] { display: none; }
+      select.x-input { color-scheme: dark; appearance: auto; }
+
       /* inputs */
       .x-input { width: 100%; min-height: var(--tap); padding: 10px 14px; border-radius: var(--r-s); border: 1px solid var(--x-stroke-2);
         background: var(--x-card-3); color: var(--x-text); font: var(--type-body); font-size: 16px; outline: none; transition: border-color .2s, box-shadow .2s; }
