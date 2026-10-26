@@ -438,6 +438,10 @@
       /* Whale Watch */
       .x-wwbar { display: flex; align-items: center; gap: 6px 8px; flex-wrap: wrap; margin-top: 12px; color: var(--x-muted); font: var(--type-caption); min-width: 0; }
       .x-wwbar .x-spacer { flex: 1; }
+      .x-upadd { display: flex; gap: 8px; margin-top: 12px; min-width: 0; }
+      .x-upadd .x-input { flex: 1; min-width: 0; margin: 0; }
+      .x-upadd .x-sbtn { flex: none; }
+      .x-upmine { font-size: 11px; padding: 1px 6px; border-radius: 6px; background: rgba(129,140,248,.18); color: #c7d2fe; margin-left: 6px; }
       .x-wwinfo { min-width: 0; overflow-wrap: anywhere; }
       .x-wwinfo:empty { display: none; }
       .x-wwlive { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: var(--r-pill); font: var(--type-tag); white-space: nowrap;
