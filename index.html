@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="hark.css" />
     <link rel="stylesheet" href="hark-hero.css" />
-    <link rel="stylesheet" href="app.css?v=el7">
+    <link rel="stylesheet" href="app.css?v=up1">
   </head>
   <body>
     <div class="x-bgfx" aria-hidden="true"></div>
@@ -64,7 +64,20 @@
             <button type="button" class="x-authtab" id="vTopBtn" role="tab" aria-selected="false" aria-controls="vTop">🏆 Top Gainer</button>
             <button type="button" class="x-authtab" id="vAddrBtn" role="tab" aria-selected="false" aria-controls="vAddr">👛 Address</button>
             <button type="button" class="x-authtab" id="vWhaleBtn" role="tab" aria-selected="false" aria-controls="vWhale">🐋 Whale Watch</button>
+            <button type="button" class="x-authtab" id="vUpBtn" role="tab" aria-selected="false" aria-controls="vUp">🗓️ UPCOMING MINT<span class="x-upbadge" id="upBadge" hidden></span></button>
           </div>
+
+          <section class="x-glass x-card x-view" id="vUp" role="tabpanel" aria-labelledby="up-title" hidden>
+            <div class="x-tasks-head">
+              <h2 id="up-title">🗓️ UPCOMING MINT</h2>
+              <button type="button" class="x-osrefresh" id="upRefresh" aria-label="Refresh jadwal mint">↻</button>
+            </div>
+            <p class="x-sub">Jadwal mint baru dari OpenSea, otomatis dicek tiap 30 menit. Tap "+ Garapan" buat yang kamu incar.</p>
+            <div class="x-wwbar"><span class="x-wwinfo" id="upInfo"></span></div>
+            <div class="x-scroll" id="upChips" role="group" aria-label="Filter chain"></div>
+            <div id="upBody" aria-live="polite"></div>
+            <p class="x-adnote">Chain: Robinhood · Ink · Ethereum · Hype · Data: OpenSea</p>
+          </section>
 
           <section class="x-glass x-card x-view" id="vWhale" role="tabpanel" aria-labelledby="ww-title" hidden>
             <div class="x-tasks-head">
@@ -430,6 +443,6 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
-    <script src="app.js?v=el7"></script>
+    <script src="app.js?v=up1"></script>
   </body>
 </html>
