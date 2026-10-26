@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="hark.css" />
     <link rel="stylesheet" href="hark-hero.css" />
-    <link rel="stylesheet" href="app.css?v=up6">
+    <link rel="stylesheet" href="app.css?v=up7">
   </head>
   <body>
     <div class="x-bgfx" aria-hidden="true"></div>
@@ -132,6 +132,7 @@
               <div class="x-addrow">
                 <button class="x-add" id="addBtn" type="button">+ Tambah Garapan</button>
                 <button class="x-add x-add--os" id="mintBtn" type="button">🌊 Mint OpenSea</button>
+                <button class="x-add x-add--os" id="famBtn" type="button">⭐ Famous</button>
               </div>
             </div>
             <div class="x-search">
@@ -260,6 +261,18 @@
         <p class="x-sub" id="eligSub" style="margin:-10px 0 14px"></p>
         <div id="eligBody" aria-live="polite"></div>
         <div class="x-sheetbtns"><button type="button" class="x-ghost" id="eligX" data-close>Tutup</button></div>
+      </div>
+    </div>
+
+    <!-- ⭐ Famous buyers sheet -->
+    <div class="x-overlay" id="famOv" aria-hidden="true">
+      <div class="x-sheet" role="dialog" aria-modal="true" aria-labelledby="famTitle">
+        <div class="x-grab" aria-hidden="true"></div>
+        <h2 id="famTitle">⭐ Famous OpenSea</h2>
+        <p class="x-sub" style="margin:-10px 0 14px">Kalau salah satu dari mereka beli atau mint di koleksi garapan kamu, foto profilnya nongol di kartu + notif.</p>
+        <div class="x-upadd" style="margin:0 0 12px"><input class="x-input" id="famIn" type="url" inputmode="url" placeholder="https://opensea.io/username atau 0x…" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Link profil OpenSea" /><button type="button" class="x-sbtn" id="famAdd">Tambah</button></div>
+        <div id="famList" aria-live="polite"></div>
+        <div class="x-sheetbtns"><button type="button" class="x-ghost" id="famX" data-close>Tutup</button></div>
       </div>
     </div>
 
@@ -444,6 +457,6 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
-    <script src="app.js?v=up6"></script>
+    <script src="app.js?v=up7"></script>
   </body>
 </html>
