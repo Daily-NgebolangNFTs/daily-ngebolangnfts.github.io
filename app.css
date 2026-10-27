@@ -743,6 +743,9 @@
       /* ✅ Elig */
       .x-ebar { display: flex; align-items: center; gap: 8px; color: var(--x-muted); font: var(--type-small); margin-bottom: 12px; }
       .x-ebar .x-sbtn { margin-left: auto; }
+.x-ac__i { width: 22px; height: 22px; min-height: 0; padding: 0; border-radius: 50%; border: 1.5px solid rgb(148 163 184 / .6); background: transparent; color: var(--x-muted); font: 700 12px/1 Georgia, serif; font-style: italic; display: inline-grid; place-items: center; cursor: pointer; flex: none; }
+.x-ac__i[aria-expanded="true"] { color: #fff; border-color: #fff; }
+.x-ac { margin: 6px 0 0; padding: 6px 10px; border-radius: 10px; background: rgb(255 255 255 / .06); font: var(--type-small); width: fit-content; max-width: 100%; }
 .x-ec { border: 1px solid rgb(148 163 184 / .2); border-radius: 14px; padding: 10px 12px; margin: 0 0 12px; background: rgb(255 255 255 / .03); }
 .x-ec__t { margin: 0 0 6px; font: var(--type-small); color: var(--x-muted); text-transform: uppercase; letter-spacing: .06em; }
 .x-ec__l { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
